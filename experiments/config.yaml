@@ -1,0 +1,79 @@
+# Configuration for Pressure-Based Posture Recognition & Body Landmark Estimation
+# Tailored for intelligent robotic sleep/seating surfaces (WATER Robotics)
+
+dataset:
+  grid_height: 64          # Height of pressure sensor grid (cranio-caudal axis)
+  grid_width: 32           # Width of pressure sensor grid (lateral axis)
+  physical_height_cm: 200  # Physical mat length in cm
+  physical_width_cm: 100   # Physical mat width in cm
+  num_subjects: 10         # 10 subjects spanning diverse anthropometric distributions
+  frames_per_posture: 60   # Frames per posture per subject (balanced dataset)
+  random_seed: 42
+
+postures:
+  - supine
+  - prone
+  - left_lateral
+  - right_lateral
+  - seated
+  - fetal
+
+landmarks:
+  - head
+  - left_shoulder
+  - right_shoulder
+  - left_hip
+  - right_hip
+  - left_knee
+  - right_knee
+  - left_ankle
+  - right_ankle
+
+noise_simulation:
+  psf_sigma: 1.8           # Viscoelastic foam compliant layer blur standard deviation (pixels)
+  psf_kernel_size: 9       # Point spread function kernel size
+  sensor_noise_std: 0.02   # Thermal & readout Gaussian sensor noise
+  quantization_bits: 8     # ADC quantization resolution (e.g., 8-bit [0, 255])
+  dead_pixel_prob: 0.008   # Probability of dead/stuck sensor elements (0.8%)
+
+preprocessing:
+  wiener_snr_db: 22.0      # Signal-to-noise ratio in dB for regularized Wiener deconvolution
+  dead_pixel_interpolation: true
+  normalization: "minmax_robust"  # Options: minmax_robust, zscore, peak
+  extract_features: true
+  num_features: 94         # WATER Robotics 94 biomechanical load distribution features
+
+model:
+  classifier:
+    in_channels: 1
+    base_filters: 32
+    spatial_attention: true
+    mc_dropout_prob: 0.3
+    num_classes: 6
+  regressor:
+    in_channels: 1
+    posture_cond_dim: 16   # Learned posture embedding dimension
+    base_filters: 32
+    mc_dropout_prob: 0.25
+    num_landmarks: 9       # 9 landmarks -> 18 coordinates (x, y)
+
+training:
+  batch_size: 32
+  epochs_classifier: 25
+  epochs_regressor: 30
+  lr_classifier: 0.001
+  lr_regressor: 0.0008
+  weight_decay: 0.0001
+  pck_threshold_px: 10.0   # Percentage of Correct Keypoints threshold (10 pixels)
+  pck_strict_threshold_px: 5.0 # Strict PCK threshold (5 pixels)
+  device: "cpu"            # Fallback to cpu or cuda if available
+
+uncertainty:
+  num_mc_samples: 30       # Forward passes for Monte Carlo Dropout uncertainty estimation
+  entropy_threshold: 0.4   # Ambiguity alert threshold for predictive entropy
+
+paths:
+  data_dir: "data"
+  checkpoint_dir: "experiments/checkpoints"
+  assets_dir: "assets"
+  results_file: "experiments/results.json"
