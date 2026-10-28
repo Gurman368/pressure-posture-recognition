@@ -1,7 +1,7 @@
 """
 Leave-One-Subject-Out (LOSO) Cross-Validation Pipeline.
 
-Simulates WATER Robotics' cross-person generalization validation:
+Simulates rigorous cross-person generalization validation:
 Evaluating whether models trained on N-1 subjects generalize accurately to an unseen,
 novel human body with distinct anthropometry, BMI, and load distribution characteristics.
 """

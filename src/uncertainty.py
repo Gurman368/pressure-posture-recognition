@@ -1,7 +1,7 @@
 """
 Bayesian Uncertainty Estimation via Monte Carlo Dropout for Tactile Surfaces.
 
-Why Uncertainty Quantification is Essential for WATER Robotics:
+Why Uncertainty Quantification is Essential for Adaptive Robotic Surfaces:
 1. Actuator Safety: Robotic adaptive beds adjust pneumatic bladders under vulnerable bony prominences.
    Actuating on an overconfident, hallucinated landmark estimate risks aggravating pressure sores.
 2. Limb Self-Occlusion: In lateral and fetal postures, contralateral limbs (e.g., right leg in left lateral)

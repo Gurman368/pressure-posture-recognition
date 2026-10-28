@@ -1,7 +1,7 @@
 {
   "timestamp": "2026-10-28 10:15:00",
   "project": "pressure-posture-recognition",
-  "organization_target": "WATER Robotics",
+  "organization_target": "",
   "sensor_specifications": {
     "array_dimensions": [64, 32],
     "total_sensels": 2048,

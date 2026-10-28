@@ -9,7 +9,7 @@ Key Modules:
 4. Biomechanical Feature Extraction: 94 handcrafted physical features representing
    load distributions, anatomical moments, spatial gradients, bilateral asymmetry,
    information-theoretic entropy, and multi-scale spectral energies.
-   (Directly reflects WATER Robotics' identity-from-load-distribution research).
+   (Directly captures biomechanical identity-from-load-distribution principles).
 """
 
 from typing import Dict, List, Optional, Tuple, Union

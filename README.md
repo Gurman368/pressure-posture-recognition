@@ -3,10 +3,10 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Research: WATER Robotics](https://img.shields.io/badge/Domain-Adaptive%20Robotic%20Surfaces-008080.svg)]()
+[![Domain: Adaptive Robotic Surfaces](https://img.shields.io/badge/Domain-Adaptive%20Robotic%20Surfaces-008080.svg)]()
 [![Validation: LOSO 10-Fold](https://img.shields.io/badge/Evaluation-LOSO%20Cross--Subject-purple.svg)]()
 
-> **Research Prototype & Application Framework for WATER Robotics**  
+> **Research Prototype & Application Framework for Adaptive Robotic Surfaces**  
 > Formulated for intelligent robotic surfaces (beds and seating arrays) that perceive interfacial load distributions, reconstruct anatomical joint landmarks, quantify self-occlusion uncertainty, and actively adapt physical support for pressure injury prevention and personalized ergonomics.
 
 ---
@@ -153,7 +153,7 @@ All evaluations were conducted on a benchmark dataset simulating 10 subjects spa
 
 ### 2. Leave-One-Subject-Out (LOSO) Cross-Person Generalization
 
-In accordance with WATER Robotics' clinical validation protocol, we execute full 10-fold Leave-One-Subject-Out cross-validation. In each fold $k$, the models are trained solely on 9 subjects and evaluated strictly on the held-out subject $S_k$.
+In accordance with rigorous clinical validation standards for intelligent surface systems, we execute full 10-fold Leave-One-Subject-Out cross-validation. In each fold $k$, the models are trained solely on 9 subjects and evaluated strictly on the held-out subject $S_k$.
 
 | Fold (Held-Out Subject) | Anthropometry Profile | Posture Accuracy (%) | Landmark PCK@10px (%) | Landmark PCK@5px (%) | Mean Pixel Error (px) |
 | :---: | :--- | :---: | :---: | :---: | :---: |
@@ -238,7 +238,7 @@ pressure-posture-recognition/
 
 ```bash
 # Clone the repository
-git clone https://github.com/water-robotics/pressure-posture-recognition.git
+git clone https://github.com/Gurman368/pressure-posture-recognition.git
 cd pressure-posture-recognition
 
 # Create and activate virtual environment
@@ -297,11 +297,11 @@ python -c "from src.cross_person_eval import LOSOEvaluator; from src.train impor
 3. **Bayesian Uncertainty & Keypoint Regression:**
    - Gal, Y., & Ghahramani, Z. (2016). *Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning*. ICML.
    - Woo, S., Park, J., Lee, J. Y., & Kweon, I. S. (2018). *CBAM: Convolutional Block Attention Module*. ECCV.
-4. **WATER Robotics Core Premise:**
+4. **Biomechanical Contact Premise:**
    - *"A body is identifiable by how it distributes its own weight."* Individual anthropometric load distribution signatures enable both posture classification and subject identity differentiation.
 
 ---
 
 ## Author & Contact
 
-Developed as a research prototype demonstrating engineering and algorithmic capabilities in tactile signal processing, contact mechanics inversion, deep spatial keypoint estimation, and Bayesian uncertainty quantification for **WATER Robotics**.
+Developed by **Gurman Avtar** as an independent research project investigating tactile signal processing, contact mechanics inversion, deep spatial keypoint estimation, and Bayesian uncertainty quantification for adaptive robotic surfaces and intelligent tactile sensing arrays.

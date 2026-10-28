@@ -63,7 +63,7 @@ from src.train import (
 def run_full_analysis():
     print("=" * 80)
     print("PRESSURE-POSTURE-RECOGNITION: RESEARCH EXPERIMENT & VALIDATION SUITE")
-    print("Intelligent Robotic Surfaces (Beds & Chairs) - WATER Robotics Application")
+    print("Intelligent Robotic Surfaces (Beds & Chairs) - Adaptive Tactile Sensing")
     print("=" * 80)
 
     config_path = os.path.join(PROJECT_ROOT, "experiments", "config.yaml")

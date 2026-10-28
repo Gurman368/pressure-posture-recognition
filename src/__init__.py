@@ -7,4 +7,4 @@ Targeted for intelligent robotic surfaces (beds and seating arrays).
 """
 
 __version__ = "0.1.0"
-__author__ = "Research Engineer (WATER Robotics Candidate)"
+__author__ = "Gurman Avtar"

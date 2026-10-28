@@ -1,5 +1,5 @@
 # Configuration for Pressure-Based Posture Recognition & Body Landmark Estimation
-# Tailored for intelligent robotic sleep/seating surfaces (WATER Robotics)
+# Tailored for intelligent robotic sleep/seating surfaces and adaptive tactile sensing
 
 dataset:
   grid_height: 64          # Height of pressure sensor grid (cranio-caudal axis)
@@ -41,7 +41,7 @@ preprocessing:
   dead_pixel_interpolation: true
   normalization: "minmax_robust"  # Options: minmax_robust, zscore, peak
   extract_features: true
-  num_features: 94         # WATER Robotics 94 biomechanical load distribution features
+  num_features: 94         # The 94-feature biomechanical load distribution descriptor
 
 model:
   classifier:
